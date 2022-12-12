@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+  <div style="margin-top:10%; text-align:center">
+    <a href="{% url 'addproducts' %}">Add Items</a>
+  </div>
+<div class="container">
+<div class="facebook_shopping_page" style="margin-top:10%;">
+  
+  {% for pro in products %}
+  <a href="{% url 'detailview' pro.id %}" style="text-decoration: none">
+  <div class="card  col-12 col-md-6 col-lg-4  mt-5" style="width: 18rem; background-color: rgb(190, 190, 243);">
+    {% if pro.product_image %}
+    <img src="{{pro.product_image.url}}" class="card-img-top" alt="...">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title" style="font-weight:bold;">{{pro.description}}</h5>
+      <p class="card-text">Price: <span style="font-weight:bold;">{{pro.price}}</span></p>
+      <p>Qty: <span style="font-weight:bold;">{{pro.stock}}</span></p>
+      <!-- <a href="{% url 'deleteShop' pro.id %}" class="btn btn-primary">Delete</a> -->
+    </div>
+  </div>
+  </a>
+  {% endfor %}
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

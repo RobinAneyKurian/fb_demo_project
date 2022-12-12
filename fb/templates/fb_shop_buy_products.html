@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="mt-5 d-flex flex-row">
+                <img src="{{buy.product_image.url}}" alt="" style="width:35%; height:20%;">
+                <div class="buy_product_details">
+                    <h4 style="margin-left:12%; margin-top:28%;">Price: <span style="color:red;">{{buy.price}}</span></h4>
+                    <p style="margin-left:12%; font-weight:bold;">{{buy.description}}</p>
+                    <div style="margin-left:12%;">
+                        <label for=""><span style="font-weight:bold;"> Size</span></label>
+                        <select name="" id="">
+                            <option value="">SM</option>
+                            <option value="">L</option>
+                            <option value="">MD</option>
+                            <option value="">XL</option>
+                            <option value="">XXL</option>
+                            <option value="">XXL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <label for="">Ente your name: </label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                    <div>
+                        <label for="">Email: </label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div>
+                        <label for="">Ente your card: </label>
+                        <input type="text" class="form-control" placeholder="XXXXXXXXX" name="card">
+                    </div>
+                    <div>
+                        <label for="">Ente your CVV: </label>
+                        <input type="password" class="form-control" placeholder="XXX" name="cvv">
+                    </div>
+                    <div>
+                        <label for="">Phone number: </label>
+                        <input type="text" class="form-control" name="address">
+                    </div>
+                    <div>
+                        <label for="">Ente your Address: </label>
+                        <input type="text" class="form-control" name="address">
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+{% endblock %}
